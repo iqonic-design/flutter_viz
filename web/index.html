@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta content="IE=Edge" http-equiv="X-UA-Compatible">
+  <meta name="description" content="A new Flutter project.">
+
+  <!-- iOS meta tags & icons -->
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="apple-mobile-web-app-title" content="FlutterViz BETA">
+  <link rel="apple-touch-icon" href="icons/Icon-192.png">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="favicon.png"/>
+
+  <title>FlutterViz BETA</title>
+
+  <!-- live base href path and link rel-->
+  <base href="/">
+  <link rel="manifest" href="web/manifest.json">
+
+</head>
+
+<body>
+
+<script>
+  if ('serviceWorker' in navigator) {
+    window.addEventListener('flutter-first-frame', function () {
+      navigator.serviceWorker.register('flutter_service_worker.js?v=3214312957');
+    });
+  }
+
+  var isCtrl = false;
+  document.onkeyup=function(e){
+    if(e.keyCode == 17) isCtrl=false;
+  }
+
+  document.onkeydown=function(e){
+    if(e.keyCode == 17) isCtrl=true;
+    if(e.keyCode == 83 && isCtrl == true) {
+
+      return false;
+    }
+}
+
+</script>
+
+<meta name="google-signin-client_id"
+      content="779763887843-2je7j4m4s5qvl2fft7fb27s5rshguh08.apps.googleusercontent.com">
+
+<script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.1.1/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.1.1/firebase-analytics.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.1.1/firebase-firestore.js"></script>
+
+<script>
+
+    var firebaseConfig = {
+    apiKey: "AIzaSyDfk-BolzjzzwCIZjLB2jJvVXptMU3jUwI",
+    authDomain: "flutterviz-ae283.firebaseapp.com",
+    projectId: "flutterviz-ae283",
+    storageBucket: "flutterviz-ae283.appspot.com",
+    messagingSenderId: "779763887843",
+    appId: "1:779763887843:web:d76c1c152c020fdaa3dfd6",
+    measurementId: "G-TT639JLKRK"
+  };
+
+
+  firebase.initializeApp(firebaseConfig);
+  firebase.analytics();
+
+</script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/1.3.8/FileSaver.min.js">
+</script>
+
+<script src="main.dart.js?version=35" type="application/javascript"></script>
+</body>
+</html>
