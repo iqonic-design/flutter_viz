@@ -16,7 +16,7 @@
 - 💾 Export clean, readable, and production-ready Dart code
 - 📱 Mobile-first layout builder
 - 💡 Light and fast, optimized for performance
-- 🌍 Cross-platform (Web, Desktop, and Mobile with Flutter)
+- 🌍 Cross-platform (Web, Desktop)
 
 ---
 
