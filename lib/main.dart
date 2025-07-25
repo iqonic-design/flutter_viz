@@ -69,9 +69,11 @@ void main() async {
   appStore.setProfileImage(getStringAsync(USER_PHOTO));
   appStore.setUserEmail(getStringAsync(USER_EMAIL));
 
-  await appStore.setLanguage(getStringAsync(SELECTED_LANGUAGE_CODE, defaultValue: defaultLanguage));
+  await appStore.setLanguage(
+      getStringAsync(SELECTED_LANGUAGE_CODE, defaultValue: defaultLanguage));
 
-  int themeModeIndex = getIntAsync(THEME_MODE_INDEX, defaultValue: ThemeModeDark);
+  int themeModeIndex =
+      getIntAsync(THEME_MODE_INDEX, defaultValue: ThemeModeDark);
 
   if (getStringAsync(USER_TYPE) == ADMIN) {
     appStore.setDarkMode(false);
@@ -86,17 +88,18 @@ void main() async {
     packageInfo = packageInformation;
   });
 
-  await dotenv.load(fileName: ".env");
+  //await dotenv.load(fileName: "dotenv");
 
   // Load Google Maps script dynamically
-  final mapKey = dotenv.env['GOOGLE_MAPS_API_KEY'];
+  //final mapKey = dotenv.env['GOOGLE_MAPS_API_KEY'];
+  final mapKey = null;
   if (mapKey != null && mapKey.isNotEmpty) {
-    final script = web.Document().createElement('script') as web.HTMLScriptElement;
+    final script =
+        web.Document().createElement('script') as web.HTMLScriptElement;
     script.src = 'https://maps.googleapis.com/maps/api/js?key=$mapKey';
     script.defer = true;
     web.document.head!.append(script);
-  }
-  else {
+  } else {
     print("⚠️ GOOGLE_MAPS_API_KEY is missing or empty in .env");
   }
 
@@ -134,7 +137,11 @@ class _MyAppState extends State<MyApp> {
             TRY_DEMO_ROUTE: (_) => const LoginScreen(isDemo: true),
           },
           supportedLocales: LanguageDataModel.languageLocales(),
-          localizationsDelegates: [AppLocalizations(), GlobalMaterialLocalizations.delegate, GlobalWidgetsLocalizations.delegate],
+          localizationsDelegates: [
+            AppLocalizations(),
+            GlobalMaterialLocalizations.delegate,
+            GlobalWidgetsLocalizations.delegate
+          ],
           localeResolutionCallback: (locale, supportedLocales) => locale,
           locale: Locale(appStore.selectedLanguageCode!),
         );
