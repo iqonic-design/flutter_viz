@@ -16,7 +16,7 @@
 - 💾 Export clean, readable, and production-ready Dart code
 - 📱 Mobile-first layout builder
 - 💡 Light and fast, optimized for performance
-- 🌍 Cross-platform (Web, Desktop)
+- 🌍 Cross-platform (Web, Desktop, and Mobile with Flutter)
 
 ---
 
@@ -31,7 +31,26 @@ git clone https://github.com/iqonic-design/flutter_viz.git
 cd flutterviz
 
 ```
+---
+## 🔑 Environment Variables
 
+To unlock the full power of **FlutterViz**, you’ll need to set up a `.env` file in your project’s root directory.  
+This file holds your private configuration keys—keeping your app secure, flexible, and ready for production.
+
+**Here’s what each variable does:**
+
+- **`BASE_URL`**: The root URL of the backend API that your application communicates with for all data operations and services.
+- **`CAPTACHA_SITE_KEY`**: Your Google reCAPTCHA site key, protecting your forms from spam and abuse.
+- **`CAPTACHA_SECRET_KEY`**: The secret key for verifying reCAPTCHA responses on the backend.
+- **`INVITE_CODE`**: A required code that users must enter during account creation to register and access the application.
+
+**Sample `.env` file:**
+```properties
+BASE_URL=YOUR_BASE_URL
+CAPTACHA_SITE_KEY=YOUR_CAPTACHA_SITE_KEY
+CAPTACHA_SECRET_KEY=YOUR_CAPTACHA_SECRET_KEY
+INVITE_CODE=YOUR_INVITE_CODE
+```
 ---
 
 ## 🤝 Contributing
@@ -74,7 +93,7 @@ We welcome contributions from everyone! Whether you're fixing bugs, improving do
 
 Found a bug? Have a feature request?
 
-1. Go to the [Issues](https://github.com/your-username/flutterviz/issues) tab.
+1. Go to the [Issues](https://github.com/iqonic-design/flutter_viz/issues) tab.
 2. Click **New Issue**.
 3. Choose the relevant template (e.g., Bug Report, Feature Request).
 4. Fill in the details clearly and concisely.
@@ -93,10 +112,10 @@ Before submitting a pull request:
 
 2. **Test your changes** and ensure they meet the project's coding standards.
 3. **Create a pull request**:
-    * Push your branch to GitHub
-    * Navigate to the original repo
-    * Click **Compare & pull request**
-    * Add a **clear title and description** explaining your changes
+   * Push your branch to GitHub
+   * Navigate to the original repo
+   * Click **Compare & pull request**
+   * Add a **clear title and description** explaining your changes
 4. **Reference related issues**, if any:
 
     ```
