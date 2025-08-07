@@ -1,5 +1,7 @@
 # FlutterViz UI Builder (Open Source)
 
+> **Note:** The backend code for this project is available in the [`backend` branch](https://github.com/iqonic-design/flutter_viz/tree/backend). Please switch to the `backend` branch to access and work with the backend source code.
+
 **FlutterViz** is a visual UI builder built using Flutter. It allows developers to design stunning Flutter UIs with a drag-and-drop interface, export clean Dart code, and accelerate the development process.
 
 > 🚀 This open-source project aims to empower developers by providing a free and extensible visual Flutter UI builder.
