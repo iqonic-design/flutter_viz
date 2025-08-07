@@ -1,127 +1,118 @@
-# FlutterViz UI Builder (Open Source)
 
-**FlutterViz** is a visual UI builder built using Flutter. It allows developers to design stunning Flutter UIs with a drag-and-drop interface, export clean Dart code, and accelerate the development process.
+# 🚀 Laravel API Backend for FlutterViz
 
-> 🚀 This open-source project aims to empower developers by providing a free and extensible visual Flutter UI builder.
-
-[![Watch on YouTube](https://img.shields.io/badge/Watch%20Demo-YouTube-red?logo=youtube&style=for-the-badge)](https://www.youtube.com/watch?v=CgIGPKeWYB0)
+This is the official open-source **Laravel API backend** for FlutterViz, a visual Flutter UI builder.  
+This backend powers the mobile application by providing RESTful APIs, user authentication, and data management.
 
 ---
 
 ## ✨ Features
 
-- 🔧 **Drag-and-drop editor** to build Flutter UIs visually
-- 📦 50+ Built-in Flutter widgets
-- 🎨 Real-time property customization (padding, color, font, etc.)
-- 💾 Export clean, readable, and production-ready Dart code
-- 📱 Mobile-first layout builder
-- 💡 Light and fast, optimized for performance
-- 🌍 Cross-platform (Web, Desktop, and Mobile with Flutter)
+- 🔧 Built with Laravel 10+
+- 🔐 API Authentication using Laravel Sanctum
+- 📁 Clean and modular code structure
+- 📡 RESTful APIs ready to consume from Flutter
+- 📂 API routes defined in `routes/api.php`
 
 ---
 
-## 🔧 Installation
+## 🛠️ Tech Stack
 
-### 🚀 Run Locally
+- **Laravel** - PHP backend framework
+- **MySQL**  - Relational database
+- **Sanctum** - Lightweight API token authentication
+- **Flutter** - Frontend (in a separate repository)
 
-1. **Clone the repository**
-
-```bash
-git clone https://github.com/iqonic-design/flutter_viz.git
-cd flutterviz
-
-```
----
-## 🔑 Environment Variables
-
-To unlock the full power of **FlutterViz**, you’ll need to set up a `.env` file in your project’s root directory.  
-This file holds your private configuration keys—keeping your app secure, flexible, and ready for production.
-
-**Here’s what each variable does:**
-
-- **`BASE_URL`**: The root URL of the backend API that your application communicates with for all data operations and services.
-- **`CAPTACHA_SITE_KEY`**: Your Google reCAPTCHA site key, protecting your forms from spam and abuse.
-- **`CAPTACHA_SECRET_KEY`**: The secret key for verifying reCAPTCHA responses on the backend.
-- **`INVITE_CODE`**: A required code that users must enter during account creation to register and access the application.
-
-**Sample `.env` file:**
-```properties
-BASE_URL=YOUR_BASE_URL
-CAPTACHA_SITE_KEY=YOUR_CAPTACHA_SITE_KEY
-CAPTACHA_SECRET_KEY=YOUR_CAPTACHA_SECRET_KEY
-INVITE_CODE=YOUR_INVITE_CODE
-```
 ---
 
-## 🤝 Contributing
+## 📁 Project Structure
 
-We welcome contributions from everyone! Whether you're fixing bugs, improving documentation, or adding new features — your help is appreciated.
+app/             - Core application logic (Models, Controllers, etc.)
+routes/api.php   - All API routes for Flutter integration
+config/          - Configuration files
+database/        - Migrations and seeders
+.env.example     - Example environment config
 
-### 📌 Getting Started
+---
 
-1. **Fork the repository** to your GitHub account.
+## ⚙️ Getting Started
 
-2. **Clone your forked repository**:
+Follow these steps to set up the project locally:
 
-    ```bash
-    git clone https://github.com/your-username/flutterviz.git
-    cd flutterviz
-    ```
+### 1. Clone the Repository
 
-3. **Create a new branch** with a descriptive name:
+git clone https://github.com/your-username/flutterviz-api-backend.git
+cd flutterviz-api-backend
 
-    ```bash
-    git checkout -b feature/your-feature-name
-    ```
 
-4. **Make your changes**, then commit:
+### 2. Install Dependencies
+composer install
 
-    ```bash
-    git add .
-    git commit -m "Add: Short description of your feature"
-    ```
 
-5. **Push to your forked repository**:
+### 3. Create and Configure Environment File
+cp .env.example .env
 
-    ```bash
-    git push origin feature/your-feature-name
-    ```
 
-> ✨ **Tip:** Keep your pull requests focused. Submit separate PRs for unrelated features or fixes.
+Update `.env` with your database and other configuration:
 
-### 🐛 Creating Issues
+APP_NAME=FlutterVizAPI
+APP_URL=http://localhost:8000
 
-Found a bug? Have a feature request?
+DB_CONNECTION=mysql
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_DATABASE=your_database
+DB_USERNAME=your_username
+DB_PASSWORD=your_password
 
-1. Go to the [Issues](https://github.com/iqonic-design/flutter_viz/issues) tab.
-2. Click **New Issue**.
-3. Choose the relevant template (e.g., Bug Report, Feature Request).
-4. Fill in the details clearly and concisely.
 
-We use labels to organize and prioritize — be sure to use appropriate tags when possible.
+### 4. Generate Application Key
+php artisan key:generate
 
-### 📤 Submitting Pull Requests
 
-Before submitting a pull request:
+### 5. Run Migrations
+php artisan migrate
 
-1. **Ensure your branch is up to date** with the latest `main`:
 
-    ```bash
-    git pull origin main
-    ```
+### 6. (Optional) Seed the Database
+php artisan db:seed
 
-2. **Test your changes** and ensure they meet the project's coding standards.
-3. **Create a pull request**:
-   * Push your branch to GitHub
-   * Navigate to the original repo
-   * Click **Compare & pull request**
-   * Add a **clear title and description** explaining your changes
-4. **Reference related issues**, if any:
 
-    ```
-    Closes #issue-number
-    ```
+### 7. Start the Development Server
+php artisan serve
 
-Our team will review your PR and provide feedback or suggestions. Please be responsive and respectful during the review process.
 
-> ⭐ If you find this project useful, don't forget to **star** the repo and **share** it!
+Your backend API will now be running at:
+📡 `http://localhost:8000/api`
+
+---
+
+## 🔐 Authentication
+
+This project uses **Laravel Sanctum** for API authentication.
+
+After running `php artisan migrate`, Sanctum is ready to use.
+API routes that require auth are protected using middleware like:
+
+Route::middleware('auth:sanctum')->group(function () {
+    // Protected routes here
+});
+
+
+Refer to the [Sanctum Documentation](https://laravel.com/docs/10.x/sanctum) for more info.
+
+---
+
+## 📱 Flutter Frontend
+
+The Flutter frontend that consumes this backend is available here:
+
+🔗 [FlutterViz Mobile App Repository](https://github.com/your-username/flutterviz-app) *(Replace with actual link)*
+
+---
+
+## 🧪 API Testing
+
+Use Postman or any API client to test the endpoints.
+
+
