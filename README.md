@@ -41,8 +41,11 @@ Follow these steps to set up the project locally:
 
 ### 1. Clone the Repository
 
-git clone https://github.com/your-username/flutterviz-api-backend.git
-cd flutterviz-api-backend
+```bash
+git clone https://github.com/iqonic-design/flutter_viz.git
+cd flutter_viz
+git checkout backend
+```
 
 
 ### 2. Install Dependencies
@@ -58,12 +61,14 @@ Update `.env` with your database and other configuration:
 APP_NAME=FlutterVizAPI
 APP_URL=http://localhost:8000
 
+```bash
 DB_CONNECTION=mysql
 DB_HOST=127.0.0.1
 DB_PORT=3306
 DB_DATABASE=your_database
 DB_USERNAME=your_username
 DB_PASSWORD=your_password
+```
 
 
 ### 4. Generate Application Key
