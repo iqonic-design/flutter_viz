@@ -8,6 +8,8 @@
 
 [![Watch on YouTube](https://img.shields.io/badge/Watch%20Demo-YouTube-red?logo=youtube&style=for-the-badge)](https://www.youtube.com/watch?v=CgIGPKeWYB0)
 
+**🌐 Live Demo:** **[https://app.flutterviz.com/](https://app.flutterviz.com/)**
+
 ---
 
 ## ✨ Features
