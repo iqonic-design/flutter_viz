@@ -26,14 +26,17 @@
 
 ## 🔧 Installation
 
+Pre-requisites: [Flutter SDK](https://docs.flutter.dev/get-started/install) installed and added to PATH
+
 ### 🚀 Run Locally
 
-1. **Clone the repository**
+**Clone the repository and run**
 
 ```bash
 git clone https://github.com/iqonic-design/flutter_viz.git
-cd flutterviz
-
+cd flutter_viz
+flutter pub get
+flutter run
 ```
 ---
 ## 🔑 Environment Variables
@@ -68,8 +71,8 @@ We welcome contributions from everyone! Whether you're fixing bugs, improving do
 2. **Clone your forked repository**:
 
     ```bash
-    git clone https://github.com/your-username/flutterviz.git
-    cd flutterviz
+    git clone https://github.com/your-username/flutter_viz.git
+    cd flutter_viz
     ```
 
 3. **Create a new branch** with a descriptive name:
